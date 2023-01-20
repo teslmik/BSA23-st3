@@ -1,5 +1,15 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "teslmik@gmail.com",
+      "password": "12345",
+      "firstName": "Михайло",
+      "lastName": "Тесленко",
+      "phoneNumber": "+380979043414",
+      "id": "b957e116-53e0-413b-a548-7d7d0352096c",
+      "createdAt": "2023-01-20T14:57:59.441Z"
+    }
+  ],
   "fighters": [],
   "fights": []
 }
