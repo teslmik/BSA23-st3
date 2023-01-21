@@ -1,11 +1,11 @@
 import { USER } from "../models/user.js";
 
+
+const { id, ...userData } = USER;
+
 const createUserValid = (req, res, next) => {
   // TODO: Implement validatior for USER entity during creation
-  const { id, ...userData } = USER;
-  const propIdent = deepEqual(req.body, userData);
-
-  let errorsMessage = validation(req.body, propIdent);
+  let errorsMessage = validation(req.body, deepEqual(req.body, userData));
 
   if (errorsMessage.length !== 0) {
     res.errors = '400';
@@ -17,7 +17,23 @@ const createUserValid = (req, res, next) => {
 
 const updateUserValid = (req, res, next) => {
   // TODO: Implement validatior for user entity during update
-  let errorsMessage = validation(req.body, true);
+  const propArr = [];
+
+  for (let prop in req.body) {
+    if (req.body.hasOwnProperty(prop)) {
+      propArr.push(prop);
+    }
+  }
+
+  const checkHasProp = propArr.some((elem) => {
+    for (let prop in userData) {
+      if (prop === elem) {
+        return true
+      }
+    }
+  });
+
+  let errorsMessage = validation(req.body, checkHasProp);
 
   if (Object.keys(req.body).length === 0) {
     errorsMessage += "No data to update \n";
@@ -29,8 +45,6 @@ const updateUserValid = (req, res, next) => {
 
   next();
 };
-
-export { createUserValid, updateUserValid };
 
 const validationEmail = (email) => {
   return email && email.match(/^\w+([\.-]?\w+)*@gmail.com/);
@@ -52,10 +66,10 @@ const validationFirstName = (firstName) => {
   return isNaN(firstName);
 };
 
-const validation = (newUser, deepEqual = false) => {
+const validation = (newUser, funcBoolean = false) => {
   let errorsMessage = "";
 
-  if (!deepEqual) {
+  if (!funcBoolean) {
     errorsMessage += `Wrong properties. \n`;
   }
 
@@ -88,4 +102,6 @@ function deepEqual(obj1, obj2) {
   }
 
   return true;
-}
+};
+
+export { createUserValid, updateUserValid };

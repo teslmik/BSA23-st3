@@ -4,22 +4,23 @@ class UserService {
   // TODO: Implement methods to work with user
 
   create(data) {
-    const { email, phoneNumber } = data;
+    const { email, phoneNumber, ...userData } = data;
 
-    if (this.search({ email }) || this.search({ phoneNumber })) {
-      throw new Error("Email or phone number is already registered");
+    if (this.search({ email: email.toLowerCase() }) || this.search({ phoneNumber })) {
+      throw new Error("Email or phone number is already exist");
     }
 
-    const user = userRepository.create(data);
+    const user = userRepository.create({ email: email.toLowerCase(), phoneNumber, ...userData });
 
     return user;
   }
 
   update(id, data) {
+    const { email, phoneNumber, ...userData } = data;
 
     if (!this.search({ id })) throw new Error("User not found");
-    if (this.search({ email: data?.email }) || this.search({ phoneNumber: data?.phoneNumber })) {
-      throw new Error("Email or phone number is already registered");
+    if (this.search({ email: email.toLowerCase() }) || this.search({ phoneNumber })) {
+      throw new Error("Email or phone number is already exist");
     }
 
     const user = userRepository.update(id, data);
@@ -43,7 +44,6 @@ class UserService {
 
   delete(id) {
     const user = userRepository.delete(id);
-    console.log('user: ', user);
     if (!user || user.length === 0) throw new Error("User not found");
     return user;
   }

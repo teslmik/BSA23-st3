@@ -27,7 +27,6 @@ router.post('/', createUserValid, (req, res, next) => {
 router.put('/:id', updateUserValid, (req, res, next) => {
   try {
     if (!res.errors) {
-
       res.data = userService.update(req.params.id, req.body);
     }
   } catch (error) {
