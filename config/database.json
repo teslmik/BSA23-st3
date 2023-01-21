@@ -1,57 +1,5 @@
 {
-  "users": [
-    {
-      "email": "Test123@gmail.com",
-      "password": "12345",
-      "firstName": "Михайло",
-      "lastName": "Тесленко",
-      "phoneNumber": "+380979043414",
-      "id": "b957e116-53e0-413b-a548-7d7d0352096c",
-      "createdAt": "2023-01-20T14:57:59.441Z",
-      "updatedAt": "2023-01-21T09:29:13.081Z",
-      "emai": "teslmik2@gmail.com",
-      "emaityr": "teslmik2@gmail.com"
-    },
-    {
-      "email": "test123@gmail.com",
-      "password": "12345",
-      "firstName": "Михайло2",
-      "lastName": "Тесленко2",
-      "phoneNumber": "+380504903691",
-      "id": "bfd3e3a4-78a5-413f-8c6c-8d460f7041e1",
-      "createdAt": "2023-01-21T08:55:39.060Z",
-      "updatedAt": "2023-01-21T09:06:26.002Z"
-    },
-    {
-      "firstName": "tesl",
-      "lastName": "mik",
-      "email": "Teslmik2@gmail.com",
-      "phoneNumber": "+380961161419",
-      "password": "12345",
-      "id": "533c60ff-09a5-40f6-bb02-4ba3879fe78e",
-      "createdAt": "2023-01-21T09:36:11.124Z"
-    },
-    {
-      "firstName": "tesl",
-      "lastName": "mik",
-      "email": "teslmik@gmail.com",
-      "phoneNumber": "+380961161419",
-      "password": "12345",
-      "id": "256e7b4f-95c9-40ea-8404-5f0acbd0a920",
-      "createdAt": "2023-01-21T09:37:01.191Z",
-      "updatedAt": "2023-01-21T09:55:11.522Z"
-    }
-  ],
-  "fighters": [
-    {
-      "name": "vbgFdf45435",
-      "power": 20,
-      "defense": 1,
-      "health": 120,
-      "id": "9b4f927c-9a06-4620-ba2f-84de769187df",
-      "createdAt": "2023-01-21T09:07:08.407Z",
-      "updatedAt": "2023-01-21T10:00:24.725Z"
-    }
-  ],
+  "users": [],
+  "fighters": [],
   "fights": []
 }
