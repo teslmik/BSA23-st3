@@ -30,7 +30,7 @@ router.put('/:id', updateUserValid, (req, res, next) => {
       res.data = userService.update(req.params.id, req.body);
     }
   } catch (error) {
-    res.errors = "404";
+    res.errors = "400";
     res.message = error.message;
   } finally {
     next();

@@ -1,5 +1,34 @@
 {
-  "users": [],
-  "fighters": [],
+  "users": [
+    {
+      "email": "tgyty@gmail.com",
+      "phoneNumber": "+380961161415",
+      "firstName": "tesl1",
+      "lastName": "mik",
+      "password": "12345",
+      "id": "9d7f0438-6f97-4e9b-bedd-dece79e8af4d",
+      "createdAt": "2023-01-21T13:18:57.148Z",
+      "updatedAt": "2023-01-21T13:20:03.527Z"
+    }
+  ],
+  "fighters": [
+    {
+      "name": "qwe",
+      "health": 120,
+      "power": 30,
+      "defense": 5,
+      "id": "3975d835-fb55-486b-861e-1380dd4b769f",
+      "createdAt": "2023-01-21T10:35:26.520Z",
+      "updatedAt": "2023-01-21T13:21:38.328Z"
+    },
+    {
+      "name": "B",
+      "health": 120,
+      "power": 1,
+      "defense": 1,
+      "id": "7aa810d1-fbfa-4757-b92d-2c459575fbb6",
+      "createdAt": "2023-01-21T10:35:36.650Z"
+    }
+  ],
   "fights": []
 }

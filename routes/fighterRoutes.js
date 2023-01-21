@@ -27,7 +27,7 @@ router.put('/:id', updateFighterValid, (req, res, next) => {
       res.data = fighterService.update(req.params.id, req.body);
     }
   } catch (error) {
-    res.errors = "404";
+    res.errors = "400";
     res.message = error.message;
   } finally {
     next();

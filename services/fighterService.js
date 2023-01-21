@@ -28,8 +28,6 @@ class FighterService {
 
     const fighter = fighterRepository.update(id, data);
 
-    if (!fighter) throw new Error("Can not update fighter");
-
     return fighter;
   }
 
