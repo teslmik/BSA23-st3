@@ -21,7 +21,7 @@ class FighterService {
 
     if (!this.search({ id })) throw new Error("Fighter not found");
     fighters.map((obj) => {
-      if (obj.name.toLowerCase() === data.name.toLowerCase()) {
+      if (obj.name?.toLowerCase() === data.name?.toLowerCase()) {
         throw new Error("Fighter name is already exist");
       }
     });
@@ -50,7 +50,6 @@ class FighterService {
 
   search(search) {
     const item = fighterRepository.getOne(search);
-
     if (!item) {
       return null;
     }
