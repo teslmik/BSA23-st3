@@ -17,10 +17,10 @@ class UserService {
 
   update(id, data) {
     if (!this.search({ id })) throw new Error("User not found");
-    if (this.search({ email: data?.email.toLowerCase() }) || this.search({ phoneNumber: data?.phoneNumber })) {
+    if (this.search({ email: data?.email?.toLowerCase() }) || this.search({ phoneNumber: data?.phoneNumber })) {
       throw new Error("Email or phone number is already exist");
     }
-    if (data.email) data.email = data.email.toLowerCase();
+    if (data.email) data.email = data.email?.toLowerCase();
 
     const user = userRepository.update(id, data);
 
