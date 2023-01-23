@@ -16,23 +16,16 @@ const createFighterValid = (req, res, next) => {
 
 const updateFighterValid = (req, res, next) => {
   // TODO: Implement validatior for FIGHTER entity during update
-  const propArr = [];
-
-  for (let prop in req.body) {
-    if (req.body.hasOwnProperty(prop)) {
-      propArr.push(prop);
-    }
-  }
-
-  const checkHasProp = propArr.some((elem) => {
-    for (let prop in fighterData) {
-      if (prop === elem) {
-        return true
+  const checkHasProp = () => {
+    for (let prop in req.body) {
+      if (!fighterData.hasOwnProperty(prop)) {
+        return false;
       }
     }
-  });
+    return true;
+  }
 
-  let errorsMessage = validation(req.body, checkHasProp);
+  let errorsMessage = validation(req.body, checkHasProp());
 
   if (Object.keys(req.body).length === 0) {
     errorsMessage += "No data to update \n";
